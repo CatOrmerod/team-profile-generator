@@ -11,7 +11,7 @@ const employeeArr = [];
 
 const writeToFile = util.promisify(fs.writeFile);
 
-const questions = () => {
+const newEmployee = () => {
     return inquirer.prompt([
         {
             type: 'input',
@@ -19,7 +19,7 @@ const questions = () => {
             message: 'Employee name:',
         },
         {
-            type: 'input',
+            type: 'number',
             name: 'id',
             message: ({ name }) => `Please enter ${(name)}'s id number:`,
         },
@@ -70,8 +70,13 @@ const questions = () => {
                 }
             }
         },
+        {
+            type: 'confirm',
+            name: 'add',
+            message: 'Do you need to add another team member?',
+        }
     ])
-        .then(function ({ name, id, email, role, office, github, school }) {
+        .then(function ({ name, id, email, role, office, github, school, add }) {
             let employee;
             if (role === 'Manager') {
                 employee = new Manager(name, id, email, office);
@@ -81,11 +86,16 @@ const questions = () => {
                 employee = new Intern(name, id, email, school)
             }
             employeeArr.push(employee)
+            if (add) {
+                return newEmployee(employeeArr);
+            } else {
+                return employeeArr
+            }
         })
 }
 
 const init = () => {
-    questions()
+    newEmployee()
         .then((employeeArr) => writeToFile('index.html', generateHTML(employeeArr)))
         .then(() => console.log('Successfully wrote to index.html'))
         .catch((err) => console.error(err));
