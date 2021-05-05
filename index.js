@@ -3,7 +3,13 @@ const fs = require('fs');
 const util = require('util');
 const generateHTML = require('./src/generateHTML');
 
-const writeFileAsync = util.promisify(fs.writeFile);
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
+
+const employeeArr = [];
+
+const writeToFile = util.promisify(fs.writeFile);
 
 const questions = () => {
     return inquirer.prompt([
@@ -30,7 +36,7 @@ const questions = () => {
         },
         {
             type: 'input',
-            name: 'office-number',
+            name: 'office',
             message: ({ name }) => `Please enter Office Number for ${(name)}:`,
             when: ({ role }) => {
                 if (role === 'Manager') {
@@ -42,7 +48,7 @@ const questions = () => {
         },
         {
             type: 'input',
-            name: 'github-username',
+            name: 'github',
             message: ({ name }) => `Please enter GitHub username for ${(name)}:`,
             when: ({ role }) => {
                 if (role === 'Engineer') {
@@ -65,13 +71,24 @@ const questions = () => {
             }
         },
     ])
+        .then(function ({ name, id, email, role, office, github, school }) {
+            let employee;
+            if (role === 'Manager') {
+                employee = new Manager(name, id, email, office);
+            } else if (role === 'Engineer') {
+                employee = new Engineer(name, id, email, github);
+            } else {
+                employee = new Intern(name, id, email, school)
+            }
+            employeeArr.push(employee)
+        })
 }
 
 const init = () => {
     questions()
-      .then((answers) => writeFileAsync('index.html', generateHTML(answers)))
-      .then(() => console.log('Successfully wrote to index.html'))
-      .catch((err) => console.error(err));
+        .then((employeeArr) => writeToFile('index.html', generateHTML(employeeArr)))
+        .then(() => console.log('Successfully wrote to index.html'))
+        .catch((err) => console.error(err));
 };
-  
+
 init();

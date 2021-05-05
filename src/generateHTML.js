@@ -1,4 +1,4 @@
-const generateHTML = (answers) =>
+const generateHTML = () =>
 `<!DOCTYPE html>
 <html lang="en">
 <head>
