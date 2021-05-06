@@ -95,7 +95,7 @@ const newEmployee = () => {
 }
 
 const init = () => {
-    newEmployee()
+    newEmployee() 
         .then((employeeArr) => writeToFile('index.html', generateHTML(employeeArr)))
         .then(() => console.log('Successfully wrote to index.html'))
         .catch((err) => console.error(err));
