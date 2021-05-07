@@ -1,22 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Profiles</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-<div class="jumbotron jumbotron-fluid">
-<div class="container">
-  <h1 class="display-4">Hi! My name is Cat Ormerod</h1>
-  <p class="lead">I am from Engineer.</p>
-  <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
-  <ul class="list-group">
-    <li class="list-group-item">My GitHub username is undefined</li>
-    <li class="list-group-item">LinkedIn: 1</li>
-  </ul>
+    <header>
+        <nav class="navbar bg-danger" id="navbar">
+            <span class="navbar-brand mb-0 h1 w-100 text-center" id="navbar-text">Team Profile</span>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="card-deck">
+        <div class="card" id="manager" style="width:400px">
+  <div class="card-header bg-primary">
+      <h4 class="card-title">Cat</h4>
+      <p class="card-text">Manager</p>
+  </div>
+  <div class="card-body bg-light text-center">
+      <p class="card-text" id="id">ID Number: 1</p>
+      <p class="card-text" id="email">Email Address: c<a href="mailto:c"></a></p>
+      <p class="card-text" id="office">Office Number: 2</p>
+  </div>
+</div><div class="card" id="manager" style="width:400px">
+  <div class="card-header bg-primary">
+      <h4 class="card-title">ian</h4>
+      <p class="card-text">Engineer</p>
+  </div>
+  <div class="card-body bg-light text-center">
+      <p class="card-text" id="id">ID Number: 2</p>
+      <p class="card-text" id="email">Email Address: ian@<a href="mailto:ian@"></a></p>
+      <p class="card-text" id="github">Github: iwally</p>
+  </div>
+</div><div class="card" id="manager" style="width:400px">
+  <div class="card-header bg-primary">
+      <h4 class="card-title">Paisley</h4>
+      <p class="card-text">Intern</p>
+  </div>
+  <div class="card-body bg-light text-center">
+      <p class="card-text" id="id">ID Number: 3</p>
+      <p class="card-text" id="email">Email Address: pais<a href="mailto:pais"></a></p>
+      <p class="card-text" id="school">School: kristin</p>
+  </div>
 </div>
-</div>
+        </div>
+    </div>
+
+
+
 </body>
+
 </html>
