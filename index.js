@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const jest = require('jest');
 const fs = require('fs');
 const util = require('util');
 const generateHTML = require('./src/generateHTML');

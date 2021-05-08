@@ -9,8 +9,7 @@ function makeCards(employeeArr) {
     const email = employeeArr[i].getEmail();
     if (role === 'Manager') {
       const office = employeeArr[i].getOffice();
-      let manCard = makeManCard( role, name, id, email, office );
-      teamCardsArr.push(manCard);
+      teamCardsArr.push(makeManCard( role, name, id, email, office ));
     } else if (role === 'Engineer') {
       const github = employeeArr[i].getGithub();
       teamCardsArr.push(makeEngCard( role, name, id, email, github ));
