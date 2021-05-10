@@ -40,10 +40,10 @@ describe('Employee', () => {
         let employee = new Employee('Cat', '1', email);
         expect(employee.getEmail()).toBe(email)
     })
-    it('should get role via getRole()', () => {
-        let role = 'Manager';
-        let employee = new Employee('Cat', '1', 'Cat@gmail.com', role);
-        expect(employee.getRole()).toBe(role)
+    it('getRole() should return "Employee"', () => {
+        let role = 'Employee'
+        let employee = new Employee('Cat', '1', 'cat@gmail.com', role);
+        expect(employee.getRole()).toBe('Employee')
     })
 })
 
