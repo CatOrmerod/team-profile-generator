@@ -1,20 +1,19 @@
 # team-profile-generator
-A command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.
 
 ## The Brief
 
-Basic code was provided and we were required to build on that platform to create a command line application that generates a README file from the provided info.  
+A command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.
 
 ## Basic features include:
 
 ```
-    * Utilisation of Inquirer for the command line prompts to gather information for the README.md
-        - I used a default for the installation of 'npm i'
-        - For the License section I used a list format
-        - For the email section I added a validation function to ensure that something resembling an email was entered
-    * For the license details I used an AXIOS api call to the GitHub website.  This is used when the value is not left blank
-        - The API call brings back the Name, a URL, the Body of the license details and uses it to create a badge
-        - I ran into a few issues when trying to ensure that the api was only called if the value was not blank, but eventually got there with a Promise resolve
+    * Inquirer prompts to gather information about the team
+        - use of validation on the email
+        - use of when to determine which questions to show depending on what role is selected
+        - function to ensure only 1 manager can be entered for the team
+    * HTML generated from the employee data entered
+    * Jest testing to run through the criteria proposed by instructors 
+    
 
 ```
 
@@ -36,12 +35,14 @@ Step 6 - To initiate the tests write 'npm test' in the terminal, all tests will 
 
 ![image showing the command prompts that will be required](./assets/images/screenshot-3.png)
 
-![image showing a sample README](./assets/images/screenshot-4.png)
+![image showing the test pass](./assets/images/screenshot-4.png)
 
-![walkthrough video showing a demo of the application]()
+![image showing the output HTML page](./assets/images/screenshot-5.png)
+
+![walkthrough video showing a demo of the application](https://drive.google.com/file/d/1M_eMFVzGag3Fgw6AXvgsnCtP6irV7zLD/view?usp=sharing)
 
 ## URL
 
 The repo can be viewed at the following URL <https://github.com/CatOrmerod/team-profile-generator/>
-The sample README can be viewed at the following URL <https://github.com/CatOrmerod/team-profile-generator/tree/main/dist/index.html>
-The demo video can be viewed at the following URL <https://drive.google.com/file/>
+The index file can be viewed at the following URL <https://github.com/CatOrmerod/team-profile-generator/tree/main/dist/index.html>
+The demo video can be viewed at the following URL <https://drive.google.com/file/d/1M_eMFVzGag3Fgw6AXvgsnCtP6irV7zLD/view?usp=sharing>

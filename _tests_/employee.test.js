@@ -47,12 +47,3 @@ describe('Employee', () => {
     })
 })
 
-
-
-// test ('Can get name via getName()')
-
-// test ('Can get id via getId()')
-
-// test ('Can get email via getEmail()')
-
-// test ('getRole() should return "Employee')

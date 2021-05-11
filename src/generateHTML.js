@@ -1,5 +1,7 @@
+// array to store the team cards
 teamCardsArr = [];
 
+//function to loop through the employee details and create cards to insert into the main html
 function makeCards(employeeArr) {
   console.log(employeeArr);
   for (let i = 0; i < employeeArr.length; i++) {
@@ -21,6 +23,7 @@ function makeCards(employeeArr) {
   } return teamCardsArr.join('');
 }
 
+//html card templates for each employee type
 const makeManCard = (role, name, id, email, office) =>
   `<div class="card" id="manager" style="width:400px">
   <div class="card-header bg-primary">
@@ -63,6 +66,7 @@ const makeIntCard = (role, name, id, email, school) =>
 </div>`
 ;
 
+//main HTML into which the cards are inserted before saving into dist folder
 const generateHTML = (teamCardsArr) =>
 `<!DOCTYPE html>
 <html lang="en">
