@@ -6,14 +6,12 @@
   "directories": {
     "lib": "lib",
     "tests": "_tests_"
-    
   },
   "dependencies": {
     "inquirer": "^8.0.0",
     "jest": "^26.6.3"
   },
   "devDependencies": {},
-  
   "scripts": {
     "start": "node index",
     "watch": "nodemon index",

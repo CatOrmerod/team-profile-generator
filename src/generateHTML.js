@@ -29,7 +29,7 @@ const makeManCard = (role, name, id, email, office) =>
   </div>
   <div class="card-body bg-light text-center">
       <p class="card-text" id="id">ID Number: ${id}</p>
-      <p class="card-text" id="email">Email Address: ${email}<a href="mailto:${email}"></a></p>
+      <p class="card-text" id="email">Email Address: <a href="mailto:${email}">${email}</a></p>
       <p class="card-text" id="office">Office Number: ${office}</p>
   </div>
 </div>`
@@ -43,8 +43,8 @@ const makeEngCard = (role, name, id, email, github) =>
   </div>
   <div class="card-body bg-light text-center">
       <p class="card-text" id="id">ID Number: ${id}</p>
-      <p class="card-text" id="email">Email Address: ${email}<a href="mailto:${email}"></a></p>
-      <p class="card-text" id="github">Github: ${github}</p>
+      <p class="card-text" id="email">Email Address: <a href="mailto:${email}">${email}</a></p>
+      <p class="card-text" id="github">Github: <a href="https://github.com/${github}">${github}</a></p>
   </div>
 </div>`
 ;
@@ -57,7 +57,7 @@ const makeIntCard = (role, name, id, email, school) =>
   </div>
   <div class="card-body bg-light text-center">
       <p class="card-text" id="id">ID Number: ${id}</p>
-      <p class="card-text" id="email">Email Address: ${email}<a href="mailto:${email}"></a></p>
+      <p class="card-text" id="email">Email Address: <a href="mailto:${email}">${email}</a></p>
       <p class="card-text" id="school">School: ${school}</p>
   </div>
 </div>`

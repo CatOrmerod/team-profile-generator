@@ -29,12 +29,22 @@ const newEmployee = () => {
             type: 'input',
             name: 'email',
             message: ({ name }) => `Please enter ${(name)}'s email address:`,
+            validate: function (email) {
+                if (email.includes('@')) { return true };
+                return 'Please enter a valid email address';
+            }
         },
         {
             type: 'list',
             name: 'role',
             message: ({ name }) => `What is ${(name)}'s role?`,
-            choices: ['Manager', 'Engineer', 'Intern'],
+            choices: () => {
+                if (employeeArr.some(employee => employee.role === 'Manager')) {
+                    return ['Engineer', 'Intern']
+                } else {
+                    return ['Manager', 'Engineer', 'Intern']
+                }
+            }
         },
         {
             type: 'input',
@@ -97,8 +107,8 @@ const newEmployee = () => {
 }
 
 const init = () => {
-    newEmployee() 
-        .then((employeeArr) => writeToFile('index.html', generateHTML(employeeArr)))
+    newEmployee()
+        .then((employeeArr) => writeToFile('dist/index.html', generateHTML(employeeArr)))
         .then(() => console.log('Successfully wrote to index.html'))
         .catch((err) => console.error(err));
 };
