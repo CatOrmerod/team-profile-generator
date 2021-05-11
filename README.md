@@ -44,5 +44,5 @@ Step 6 - To initiate the tests write 'npm test' in the terminal, all tests will 
 ## URL
 
 The repo can be viewed at the following URL <https://github.com/CatOrmerod/team-profile-generator/>
-The index file can be viewed at the following URL <https://github.com/CatOrmerod/team-profile-generator/tree/main/dist/index.html>
+The index file can be viewed at the following URL <https://github.com/CatOrmerod/team-profile-generator/tree/main/assets/images/example.html>
 The demo video can be viewed at the following URL <https://drive.google.com/file/d/1M_eMFVzGag3Fgw6AXvgsnCtP6irV7zLD/view?usp=sharing>
